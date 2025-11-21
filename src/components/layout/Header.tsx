@@ -9,7 +9,7 @@ export const Header = () => {
     <header className="fixed inset-x-0 top-0 z-20 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6 lg:px-8">
         <NavLink to="/" className="text-sm font-semibold tracking-tight">
-          yourname.dev
+          Gisela RS
         </NavLink>
 
         <nav className="flex items-center gap-4">
