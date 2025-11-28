@@ -7,7 +7,7 @@ export const ContactPage = () => {
   return (
     <PageContainer>
       <Section id="contact">
-        <div className="space-y-4 text-sm text-slate-300">
+        <div className="space-y-4 text-sm text-slate-600">
           <p>
             The best way to reach me is by email. I am also active on GitHub and
             LinkedIn.

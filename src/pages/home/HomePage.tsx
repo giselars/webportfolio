@@ -19,7 +19,7 @@ export const HomePage = () => {
               Hi, I am Gisela. I build clean, thoughtful web experiences.
             </h1>
 
-            <p className="max-w-xl text-sm text-slate-300">
+            <p className="max-w-xl text-sm text-slate-600">
               Frontend developer focused on React, TypeScript and modern
               tooling. I enjoy creating interfaces that feel polished,
               accessible and easy to use.
