@@ -1,76 +1,36 @@
-import type {
-  AnchorHTMLAttributes,
-  ButtonHTMLAttributes,
-  ReactNode,
-} from 'react';
-import { cn } from '@/lib/cn';
+import type { ButtonProps } from '../../types';
 
-type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
-type ButtonSize = 'sm' | 'md' | 'lg' | 'icon';
-
-type CommonButtonProps = {
-  children: ReactNode;
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-  className?: string;
-};
-
-type ButtonAsButton = CommonButtonProps &
-  ButtonHTMLAttributes<HTMLButtonElement> & {
-    as?: 'button';
-  };
-
-type ButtonAsLink = CommonButtonProps &
-  AnchorHTMLAttributes<HTMLAnchorElement> & {
-    as: 'a';
-  };
-
-export type ButtonProps = ButtonAsButton | ButtonAsLink;
-
-export const Button = (props: ButtonProps) => {
-  const {
-    children,
-    variant = 'primary',
-    size = 'md',
-    className,
-    as = 'button',
-    ...rest
-  } = props as ButtonProps & { as: 'button' | 'a' };
-
-  const Component = as === 'a' ? 'a' : 'button';
-
+export const Button = ({
+  children,
+  variant = 'primary',
+  size = 'md',
+  className = '',
+  ...props
+}: ButtonProps) => {
   const baseClasses =
-    'inline-flex items-center justify-center rounded-xl text-sm font-medium transition';
-  const stateClasses =
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 disabled:cursor-not-allowed disabled:opacity-50';
+    'font-medium transition-all duration-300 rounded-full inline-flex items-center justify-center gap-2';
 
-  const variantClasses: Record<ButtonVariant, string> = {
-    primary: 'bg-emerald-400 text-slate-950 hover:bg-emerald-300',
-    secondary: 'bg-slate-800 text-slate-50 hover:bg-slate-700',
+  const variants: Record<NonNullable<typeof variant>, string> = {
+    primary:
+      'bg-gradient-button text-primary-700 shadow-button hover:shadow-glow hover:scale-105',
+    secondary:
+      'border-2 border-primary-400 text-primary-600 hover:bg-primary-50',
     outline:
-      'border border-emerald-400 text-emerald-300 hover:bg-emerald-500/10',
-    ghost: 'text-slate-200 hover:bg-slate-800/80',
+      'border-2 border-white/30 text-gray-700 hover:border-primary-300 hover:bg-white/50',
   };
 
-  const sizeClasses: Record<ButtonSize, string> = {
-    sm: 'h-8 px-3',
-    md: 'h-10 px-4',
-    lg: 'h-11 px-5',
-    icon: 'h-9 w-9',
+  const sizes: Record<NonNullable<typeof size>, string> = {
+    sm: 'px-4 py-2 text-sm',
+    md: 'px-6 py-3 text-base',
+    lg: 'px-8 py-4 text-lg',
   };
 
   return (
-    <Component
-      className={cn(
-        baseClasses,
-        stateClasses,
-        variantClasses[variant],
-        sizeClasses[size],
-        className
-      )}
-      {...rest}
+    <button
+      className={`${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`}
+      {...props}
     >
       {children}
-    </Component>
+    </button>
   );
 };
