@@ -10,9 +10,7 @@ export const RootLayout = ({ children }: RootLayoutProps) => {
     <div className="flex min-h-screen flex-col bg-gradient-main">
       <Header />
       <main className="flex-1 pt-16 pb-24">
-        <div className="mx-auto max-w-6xl rounded-4xl border border-white/60 bg-white/80 p-4 shadow-pastel md:p-8">
-          {children}
-        </div>
+        <div className="mx-auto max-w-6xl ">{children}</div>
       </main>
       <Footer />
     </div>

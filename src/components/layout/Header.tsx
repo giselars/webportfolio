@@ -1,13 +1,36 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+
+interface NavLinkItem {
+  to: string;
+  label: string;
+  end?: boolean;
+}
+
+const navLinks: NavLinkItem[] = [
+  { to: '/', label: 'home', end: true },
+  { to: '/about', label: 'about' },
+  { to: '/projects', label: 'projects' },
+  { to: '/contact', label: 'contact' },
+];
 
 const navLinkBaseClass = 'text-sm font-medium transition hover:text-pink-600';
 const navLinkActiveClass = 'text-pink-500';
 
 export const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
+
   return (
-    <header className="fixed inset-x-0 top-0 z-20 bg-linear-to-r from-pink-50 to-purple-50 border-b border-pink-200">
+    <header className="fixed inset-x-0 top-0 z-20 bg-linear-to-r from-pink-50 to-purple-50 border-b border-pink-200 backdrop-blur-sm bg-opacity-95">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6 lg:px-8">
-        <NavLink to="/" className="flex items-center gap-3">
+        <NavLink
+          to="/"
+          className="flex items-center gap-3 z-30"
+          onClick={closeMenu}
+        >
           <div className="w-10 h-10 bg-linear-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
             <span className="text-white text-xl font-bold">&gt;</span>
           </div>
@@ -15,46 +38,114 @@ export const Header = () => {
             <span className="text-gray-800 font-semibold text-sm">
               ~/portfolio
             </span>
-            <span className="text-gray-500 text-xs">@giselars</span>
+            <span className="text-gray-500 text-xs">@gisela</span>
           </div>
         </NavLink>
 
-        <nav className="flex items-center gap-6 md:gap-8">
-          <NavLink
-            to="/"
-            end
-            className={({ isActive }) =>
-              `${navLinkBaseClass} ${isActive ? navLinkActiveClass : 'text-gray-600'}`
-            }
-          >
-            {({ isActive }) => <>{isActive ? '> home' : 'home'}</>}
-          </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `${navLinkBaseClass} ${isActive ? navLinkActiveClass : 'text-gray-600'}`
-            }
-          >
-            {({ isActive }) => <>{isActive ? '> about' : 'about'}</>}
-          </NavLink>
-          <NavLink
-            to="/projects"
-            className={({ isActive }) =>
-              `${navLinkBaseClass} ${isActive ? navLinkActiveClass : 'text-gray-600'}`
-            }
-          >
-            {({ isActive }) => <>{isActive ? '> projects' : 'projects'}</>}
-          </NavLink>
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              `${navLinkBaseClass} ${isActive ? navLinkActiveClass : 'text-gray-600'}`
-            }
-          >
-            {({ isActive }) => <>{isActive ? '> contact' : 'contact'}</>}
-          </NavLink>
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              end={link.end}
+              className={({ isActive }) =>
+                `${navLinkBaseClass} ${isActive ? navLinkActiveClass : 'text-gray-600'}`
+              }
+            >
+              {({ isActive }) => (
+                <>{isActive ? '> ' + link.label : link.label}</>
+              )}
+            </NavLink>
+          ))}
         </nav>
+
+        {/* Mobile Hamburger Button */}
+        <button
+          onClick={toggleMenu}
+          className="md:hidden z-30 w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/50 transition-colors"
+          aria-label="Toggle menu"
+        >
+          <div className="w-6 h-5 flex flex-col justify-between">
+            <span
+              className={`block h-0.5 bg-gray-700 transition-all duration-300 ${
+                isMenuOpen ? 'rotate-45 translate-y-2' : ''
+              }`}
+            />
+            <span
+              className={`block h-0.5 bg-gray-700 transition-all duration-300 ${
+                isMenuOpen ? 'opacity-0' : ''
+              }`}
+            />
+            <span
+              className={`block h-0.5 bg-gray-700 transition-all duration-300 ${
+                isMenuOpen ? '-rotate-45 -translate-y-2' : ''
+              }`}
+            />
+          </div>
+        </button>
+
+        {/* Mobile menu*/}
+        <div
+          className={`
+            fixed inset-0  
+            md:hidden transition-all duration-300 ease-in-out
+            ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}
+          `}
+          style={{ top: '0' }}
+        >
+          <nav className="flex flex-col items-center justify-center min-h-screen gap-8 px-8 bg-linear-to-br from-pink-50 via-purple-50 to-sky-50">
+            {navLinks.map((link, index) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                end={link.end}
+                onClick={closeMenu}
+                className={({ isActive }) =>
+                  `text-2xl font-medium transition-all duration-300 hover:scale-110
+                   ${isActive ? 'text-pink-500' : 'text-gray-700 hover:text-pink-600'}`
+                }
+                style={{
+                  animationDelay: `${index * 100}ms`,
+                  animation: isMenuOpen
+                    ? 'slideIn 0.3s ease-out forwards'
+                    : 'none',
+                }}
+              >
+                {({ isActive }) => (
+                  <div className="flex items-center gap-2">
+                    {isActive ? (
+                      <>
+                        <span className="text-pink-500">×</span>
+                        <span>{link.label}</span>
+                      </>
+                    ) : (
+                      <span>{link.label}</span>
+                    )}
+                  </div>
+                )}
+              </NavLink>
+            ))}
+
+            {/* menú mobile decoration*/}
+            <div className="absolute top-20 right-10 w-20 h-20 bg-gradient-orb-pink rounded-full opacity-50 animate-pulse-slow" />
+            <div className="absolute bottom-32 left-10 w-16 h-16 bg-gradient-orb-purple rounded-full opacity-50 animate-float" />
+          </nav>
+        </div>
       </div>
+
+      <style>{`
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </header>
   );
 };

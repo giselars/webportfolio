@@ -13,21 +13,21 @@ export const ContactPage = () => {
             LinkedIn.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Button asChild>
+            <Button>
               <a href="mailto:youremail@example.com">Email me</a>
             </Button>
-            <Button asChild variant="outline">
+            <Button variant="outline">
               <a
-                href="https://github.com/your-username"
+                href="https://github.com/giselars"
                 target="_blank"
                 rel="noreferrer"
               >
                 GitHub
               </a>
             </Button>
-            <Button asChild variant="ghost">
+            <Button>
               <a
-                href="https://www.linkedin.com/in/your-handle"
+                href="https://www.linkedin.com/in/giselascarpin"
                 target="_blank"
                 rel="noreferrer"
               >
