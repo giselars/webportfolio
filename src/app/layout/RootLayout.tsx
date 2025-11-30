@@ -7,9 +7,11 @@ type RootLayoutProps = {
 
 export const RootLayout = ({ children }: RootLayoutProps) => {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50">
+    <div className="flex min-h-screen flex-col bg-gradient-main">
       <Header />
-      <div className="pt-16">{children}</div>
+      <main className="flex-1 pt-16 pb-24">
+        <div className="mx-auto max-w-6xl ">{children}</div>
+      </main>
       <Footer />
     </div>
   );
