@@ -10,12 +10,20 @@ export interface Project {
   demo?: string;
 }
 
-export type ProjectCategory = 'all' | 'frontend' | 'fullstack' | 'ai';
+export type ProjectCategory =
+  | 'all'
+  | 'frontend'
+  | 'full-stack'
+  | 'ai'
+  | 'other'
+  | 'backend'
+  | 'mobile'
+  | 'UX/UI';
 
 export interface Category {
   id: ProjectCategory;
   name: string;
-  emoji: string;
+  emoji: string | React.ReactNode;
 }
 
 export interface Skill {
@@ -84,6 +92,7 @@ export interface TechIconProps {
 
 export interface ProjectCardProps {
   image?: string | null;
+  category?: string;
   title: string;
   description: string;
   tags?: string[];
