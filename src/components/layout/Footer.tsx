@@ -1,8 +1,10 @@
+import { HeartIcon } from '@heroicons/react/24/outline';
+
 export const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-20 py-8 bg-linear-to-r from-pink-50 to-purple-50 border-t border-pink-200">
+    <footer className="py-8 bg-linear-to-r from-pink-50 to-purple-50 border-t border-pink-200">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex flex-col items-center gap-4">
           <div className="flex gap-4">
@@ -46,7 +48,11 @@ export const Footer = () => {
             </a>
           </div>
 
-          <p className="text-gray-600 text-sm">Made with 💜 by and lot of ☕</p>
+          <div className="flex gap-1 items-center">
+            <span className="text-gray-600 text-sm">Made with </span>
+            <HeartIcon className="w-4 h-4 text-accent-500 hover:text-white" />
+            <span className="text-gray-600 text-sm">by and lot of ☕</span>
+          </div>
           <p className="text-gray-500 text-xs">
             © {new Date().getFullYear()} Gisela Scarpin. All rights reserved
           </p>
