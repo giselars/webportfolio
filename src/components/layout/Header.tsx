@@ -10,10 +10,10 @@ interface NavLinkItem {
 }
 
 const navLinks: NavLinkItem[] = [
-  { to: '/', label: 'home', end: true },
-  { to: '/about', label: 'about' },
-  { to: '/projects', label: 'projects' },
-  { to: '/contact', label: 'contact' },
+  { to: '/', label: 'Home', end: true },
+  { to: '/about', label: 'About' },
+  { to: '/projects', label: 'Projects' },
+  { to: '/contact', label: 'Contact' },
 ];
 
 const navLinkBaseClass = 'text-sm font-medium transition hover:text-pink-600';

@@ -39,7 +39,7 @@ const socialIcons: SocialIcon[] = [
   },
   {
     name: 'Email',
-    url: 'mailto:tu@email.com',
+    url: 'mailto:g@gmail.com',
     styles:
       'bg-gradient-to-br from-amber-200 via-amber-300 to-orange-300 text-orange-900 shadow-lg',
     hoverColor: 'hover:text-orange-500',
@@ -87,7 +87,7 @@ export const HomePage = () => {
               <Link to="/projects">
                 <Button variant="primary" size="lg" className="cursor-pointer">
                   <FolderOpenIcon className="w-6 h-6 text-white-500" />
-                  Ver Proyectos
+                  See Projects
                 </Button>
               </Link>
               <Link to="/contact">
@@ -96,7 +96,7 @@ export const HomePage = () => {
                   size="lg"
                   className="cursor-pointer"
                 >
-                  Contáctame 💌
+                  Contact me 💌
                 </Button>
               </Link>
             </div>
