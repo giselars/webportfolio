@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { CommandLineIcon } from '@heroicons/react/24/outline';
+import { ChevronRight } from 'lucide-react';
 
 interface NavLinkItem {
   to: string;
@@ -32,13 +34,15 @@ export const Header = () => {
           onClick={closeMenu}
         >
           <div className="w-10 h-10 bg-linear-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-            <span className="text-white text-xl font-bold">&gt;</span>
+            <span className="text-white text-xl font-bold">
+              <CommandLineIcon className="w-8 h-8 text-white-400" />
+            </span>
           </div>
           <div className="flex flex-col">
             <span className="text-gray-800 font-semibold text-sm">
               ~/portfolio
             </span>
-            <span className="text-gray-500 text-xs">@gisela</span>
+            <span className="text-gray-500 text-xs">@giselars</span>
           </div>
         </NavLink>
 
@@ -54,7 +58,16 @@ export const Header = () => {
               }
             >
               {({ isActive }) => (
-                <>{isActive ? '> ' + link.label : link.label}</>
+                <>
+                  {isActive ? (
+                    <span className="flex items-center">
+                      <ChevronRight size={20} className="text-pink-500" />{' '}
+                      {link.label}
+                    </span>
+                  ) : (
+                    link.label
+                  )}
+                </>
               )}
             </NavLink>
           ))}
@@ -115,10 +128,10 @@ export const Header = () => {
                 {({ isActive }) => (
                   <div className="flex items-center gap-2">
                     {isActive ? (
-                      <>
-                        <span className="text-pink-500">×</span>
+                      <div className="flex items-center justify-center">
+                        <ChevronRight size={25} className="text-pink-500" />
                         <span>{link.label}</span>
-                      </>
+                      </div>
                     ) : (
                       <span>{link.label}</span>
                     )}
@@ -128,8 +141,8 @@ export const Header = () => {
             ))}
 
             {/* menú mobile decoration*/}
-            <div className="absolute top-20 right-10 w-20 h-20 bg-gradient-orb-pink rounded-full opacity-50 animate-pulse-slow" />
-            <div className="absolute bottom-32 left-10 w-16 h-16 bg-gradient-orb-purple rounded-full opacity-50 animate-float" />
+            <div className="absolute top-30 right-10 w-18 h-18 bg-gradient-orb-pink rounded-full opacity-50 animate-pulse-slow" />
+            <div className="absolute top-70 left-20 w-16 h-16 bg-gradient-orb-purple rounded-full opacity-50 animate-float" />
           </nav>
         </div>
       </div>
