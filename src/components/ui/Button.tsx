@@ -12,7 +12,7 @@ export const Button = ({
 
   const variants: Record<NonNullable<typeof variant>, string> = {
     primary:
-      'bg-gradient-button text-primary-700 shadow-button hover:shadow-glow hover:scale-105',
+      'text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-indigo-600 hover:via-purple-600 hover:to-pink-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2',
     secondary:
       'border-2 border-primary-400 text-primary-600 hover:bg-primary-50',
     outline:

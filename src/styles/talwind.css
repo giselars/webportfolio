@@ -1,1 +1,119 @@
 @import 'tailwindcss';
+
+@theme {
+  /* Colores Primary (Púrpura) */
+  --color-primary-50: #faf5ff;
+  --color-primary-100: #f3e8ff;
+  --color-primary-200: #e9d5ff;
+  --color-primary-300: #d8b4fe;
+  --color-primary-400: #c084fc;
+  --color-primary-500: #a855f7;
+  --color-primary-600: #9333ea;
+  --color-primary-700: #7e22ce;
+  --color-primary-800: #6b21a8;
+  --color-primary-900: #581c87;
+
+  /* Colores Accent (Rosa) */
+  --color-accent-50: #fef1f7;
+  --color-accent-100: #fee5f0;
+  --color-accent-200: #ffcce3;
+  --color-accent-300: #ffa3ce;
+  --color-accent-400: #ff6bb0;
+  --color-accent-500: #f9408f;
+  --color-accent-600: #e91e78;
+  --color-accent-700: #ca1262;
+  --color-accent-800: #a71353;
+  --color-accent-900: #8b1649;
+
+  /* Colores Lavender */
+  --color-lavender-50: #faf7ff;
+  --color-lavender-100: #f5f0ff;
+  --color-lavender-200: #ebe5ff;
+  --color-lavender-300: #ddd4ff;
+  --color-lavender-400: #c9b8ff;
+  --color-lavender-500: #b39dff;
+  --color-lavender-600: #9b7fff;
+  --color-lavender-700: #8461ff;
+  --color-lavender-800: #6d43ff;
+  --color-lavender-900: #5625ff;
+
+  /* Colores Sky */
+  --color-sky-50: #f0f9ff;
+  --color-sky-100: #e0f2fe;
+  --color-sky-200: #bae6fd;
+  --color-sky-300: #7dd3fc;
+  --color-sky-400: #38bdf8;
+  --color-sky-500: #0ea5e9;
+  --color-sky-600: #0284c7;
+  --color-sky-700: #0369a1;
+  --color-sky-800: #075985;
+  --color-sky-900: #0c4a6e;
+
+  /* Colores Mint */
+  --color-mint-50: #f0fdf4;
+  --color-mint-100: #dcfce7;
+  --color-mint-200: #bbf7d0;
+  --color-mint-300: #86efac;
+  --color-mint-400: #4ade80;
+  --color-mint-500: #22c55e;
+  --color-mint-600: #16a34a;
+  --color-mint-700: #15803d;
+  --color-mint-800: #166534;
+  --color-mint-900: #14532d;
+
+  /* Colores Honey */
+  --color-honey-50: #fefce8;
+  --color-honey-100: #fef9c3;
+  --color-honey-200: #fef08a;
+  --color-honey-300: #fde047;
+  --color-honey-400: #facc15;
+  --color-honey-500: #eab308;
+  --color-honey-600: #ca8a04;
+  --color-honey-700: #a16207;
+  --color-honey-800: #854d0e;
+  --color-honey-900: #713f12;
+
+  /* Sombras personalizadas */
+  --shadow-glass: 0 8px 32px 0 rgb(217 70 239 / 0.08);
+  --shadow-card: 0 10px 40px rgb(217 70 239 / 0.12);
+  --shadow-card-hover: 0 20px 60px rgb(217 70 239 / 0.2);
+  --shadow-button: 0 4px 20px rgb(249 64 143 / 0.3);
+  --shadow-glow: 0 0 30px rgb(217 70 239 / 0.4);
+  --shadow-glow-pink: 0 0 30px rgb(249 64 143 / 0.5);
+
+  /* Radius */
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+}
+
+/* Gradientes personalizados */
+@layer utilities {
+  .bg-gradient-main {
+    background-image: linear-gradient(
+      180deg,
+      #fef1f7 0%,
+      #f3e8ff 50%,
+      #e0f2fe 100%
+    );
+  }
+
+  .bg-gradient-pink-purple {
+    background-image: linear-gradient(135deg, #fef1f7 0%, #e9d5ff 100%);
+  }
+
+  .bg-gradient-purple-blue {
+    background-image: linear-gradient(135deg, #e9d5ff 0%, #bae6fd 100%);
+  }
+
+  .bg-gradient-button {
+    background-image: linear-gradient(135deg, #f9408f 0%, #9333ea 100%);
+  }
+
+  .bg-gradient-orb-pink {
+    background-image: linear-gradient(135deg, #ffa3ce 0%, #c084fc 100%);
+  }
+
+  .bg-gradient-orb-purple {
+    background-image: linear-gradient(135deg, #d8b4fe 0%, #bae6fd 100%);
+  }
+}
