@@ -5,6 +5,7 @@ import type { ProjectCardProps } from '@/types/index';
 export const ProjectCard = ({
   image,
   title,
+  category,
   description,
   tags = [],
   link,
@@ -26,7 +27,12 @@ export const ProjectCard = ({
           </div>
         )}
       </div>
-      <div className="p-6">
+      <div className="p-6 text-left">
+        <div className="flex flex-wrap mb-2">
+          <span className="px-3 py-1 capitalize bg-lavender-100 text-primary-600 rounded-full text-xs font-medium">
+            {category}
+          </span>
+        </div>
         <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-primary-600 transition-colors">
           {title}
         </h3>
