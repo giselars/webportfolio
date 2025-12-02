@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { CommandLineIcon } from '@heroicons/react/24/outline';
+import { ChevronRight } from 'lucide-react';
 
 interface NavLinkItem {
   to: string;
@@ -57,7 +58,16 @@ export const Header = () => {
               }
             >
               {({ isActive }) => (
-                <>{isActive ? '> ' + link.label : link.label}</>
+                <>
+                  {isActive ? (
+                    <span className="flex items-center">
+                      <ChevronRight size={20} className="text-pink-500" />{' '}
+                      {link.label}
+                    </span>
+                  ) : (
+                    link.label
+                  )}
+                </>
               )}
             </NavLink>
           ))}
@@ -118,10 +128,10 @@ export const Header = () => {
                 {({ isActive }) => (
                   <div className="flex items-center gap-2">
                     {isActive ? (
-                      <>
-                        <span className="text-pink-500">×</span>
+                      <div className="flex items-center justify-center">
+                        <ChevronRight size={25} className="text-pink-500" />
                         <span>{link.label}</span>
-                      </>
+                      </div>
                     ) : (
                       <span>{link.label}</span>
                     )}
