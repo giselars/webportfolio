@@ -28,21 +28,24 @@ export const Header = () => {
   return (
     <header className="fixed inset-x-0 top-0 z-20 bg-linear-to-r from-pink-50 to-purple-50 border-b border-pink-200 backdrop-blur-sm bg-opacity-95">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6 lg:px-8">
+        {/* Logo - Responsive */}
         <NavLink
           to="/"
-          className="flex items-center gap-3 z-30"
+          className="flex items-center gap-2 sm:gap-3 z-30"
           onClick={closeMenu}
         >
-          <div className="w-10 h-10 bg-linear-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 bg-linear-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
             <span className="text-white text-xl font-bold">
-              <CommandLineIcon className="w-8 h-8 text-white-400" />
+              <CommandLineIcon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
             </span>
           </div>
           <div className="flex flex-col">
-            <span className="text-gray-800 font-semibold text-sm">
+            <span className="text-gray-800 font-semibold text-xs sm:text-sm">
               ~/portfolio
             </span>
-            <span className="text-gray-500 text-xs">@giselars</span>
+            <span className="text-gray-500 text-[10px] sm:text-xs">
+              @giselars
+            </span>
           </div>
         </NavLink>
 
@@ -98,16 +101,16 @@ export const Header = () => {
           </div>
         </button>
 
-        {/* Mobile menu*/}
+        {/* Mobile menu - Responsive */}
         <div
           className={`
             fixed inset-0  
             md:hidden transition-all duration-300 ease-in-out
-            ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}
+            ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}
           `}
           style={{ top: '0' }}
         >
-          <nav className="flex flex-col items-center justify-center min-h-screen gap-8 px-8 bg-linear-to-br from-pink-50 via-purple-50 to-sky-50">
+          <nav className="flex flex-col items-center justify-center min-h-screen gap-6 sm:gap-8 px-6 sm:px-8 bg-linear-to-br from-pink-50 via-purple-50 to-sky-50">
             {navLinks.map((link, index) => (
               <NavLink
                 key={link.to}
@@ -115,7 +118,7 @@ export const Header = () => {
                 end={link.end}
                 onClick={closeMenu}
                 className={({ isActive }) =>
-                  `text-2xl font-medium transition-all duration-300 hover:scale-110
+                  `text-xl sm:text-2xl font-medium transition-all duration-300 hover:scale-110
                    ${isActive ? 'text-pink-500' : 'text-gray-700 hover:text-pink-600'}`
                 }
                 style={{
@@ -129,7 +132,10 @@ export const Header = () => {
                   <div className="flex items-center gap-2">
                     {isActive ? (
                       <div className="flex items-center justify-center">
-                        <ChevronRight size={25} className="text-pink-500" />
+                        <ChevronRight
+                          size={24}
+                          className="text-pink-500 sm:w-7 sm:h-7"
+                        />
                         <span>{link.label}</span>
                       </div>
                     ) : (
@@ -140,9 +146,9 @@ export const Header = () => {
               </NavLink>
             ))}
 
-            {/* menú mobile decoration*/}
-            <div className="absolute top-30 right-10 w-18 h-18 bg-gradient-orb-pink rounded-full opacity-50 animate-pulse-slow" />
-            <div className="absolute top-70 left-20 w-16 h-16 bg-gradient-orb-purple rounded-full opacity-50 animate-float" />
+            {/* Menú mobile decoration - Responsive */}
+            <div className="absolute top-20 sm:top-30 right-8 sm:right-10 w-14 h-14 sm:w-18 sm:h-18 bg-gradient-orb-pink rounded-full opacity-50 animate-pulse-slow" />
+            <div className="absolute bottom-20 sm:top-70 left-12 sm:left-20 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-orb-purple rounded-full opacity-50 animate-float" />
           </nav>
         </div>
       </div>
