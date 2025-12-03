@@ -39,7 +39,7 @@ const socialIcons: SocialIcon[] = [
   },
   {
     name: 'Email',
-    url: 'mailto:g@gmail.com',
+    url: 'mailto:gisela.contactme@gmail.com',
     styles:
       'bg-gradient-to-br from-amber-200 via-amber-300 to-orange-300 text-orange-900 shadow-lg',
     hoverColor: 'hover:text-orange-500',

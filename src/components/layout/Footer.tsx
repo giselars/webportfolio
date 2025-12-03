@@ -26,7 +26,7 @@ export const Footer = () => {
               <Linkedin size={20} />
             </a>
             <a
-              href="mailto:g@gmail.com"
+              href="mailto:gisela.contactme@gmail.com"
               className="w-10 h-10 rounded-full bg-white/80 border border-slate-500 text-slate-500 flex items-center justify-center hover:bg-gradient-button hover:text-white hover:bg-slate-500 transition-all duration-300"
             >
               <svg
