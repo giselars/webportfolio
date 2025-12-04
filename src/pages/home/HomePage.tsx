@@ -11,6 +11,7 @@ import {
   HeartIcon,
 } from '@heroicons/react/24/outline';
 import { Linkedin, Github } from 'lucide-react';
+import { useTranslatedContent } from '@/hooks/useTranslatedContent';
 
 interface SocialIcon {
   name: string;
@@ -48,6 +49,7 @@ const socialIcons: SocialIcon[] = [
 ];
 
 export const HomePage = () => {
+  const { t } = useTranslatedContent();
   return (
     <div className="flex items-center">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 w-full">
@@ -57,27 +59,22 @@ export const HomePage = () => {
             <Badge color="primary" className="inline-flex">
               <div className="flex items-center gap-2">
                 <CodeBracketIcon className="w-5 h-5 sm:w-6 sm:h-6 text-accent-500" />
-                <span className="text-sm sm:text-base">Frontend Developer</span>
+                <span className="text-sm sm:text-base">{t('home.badge')}</span>
               </div>
             </Badge>
 
             <div className="text-left">
               <p className="text-gray-700 font-mono font-bold text-xs sm:text-sm mb-2">
-                const developer =
+                {t('home.codeTitle')}
               </p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl">
                 <span className="font-extrabold bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                  Gisela Scarpin
+                  {t('home.title')}
                 </span>
               </h1>
             </div>
 
-            <CodeBlock>
-              {`// Exploring full-stack & AI 🚀
-function buildAmazingThings() {
-    return creativity + code ✨
-}`}
-            </CodeBlock>
+            <CodeBlock>{t('home.codeFunction')}</CodeBlock>
 
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
               <Link to="/projects" className="w-full sm:w-auto">
@@ -87,7 +84,7 @@ function buildAmazingThings() {
                   className="cursor-pointer w-full sm:w-auto justify-center"
                 >
                   <FolderOpenIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                  See Projects
+                  {t('home.viewProjects')}
                 </Button>
               </Link>
               <Link to="/contact" className="w-full sm:w-auto">
@@ -96,7 +93,7 @@ function buildAmazingThings() {
                   size="lg"
                   className="cursor-pointer w-full sm:w-auto justify-center"
                 >
-                  Contact me 💌
+                  {t('home.contactMe')} 💌
                 </Button>
               </Link>
             </div>

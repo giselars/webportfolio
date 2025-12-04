@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "home": {
+    "badge": "Ingeniera de software",
+    "title": "Gisela Scarpin",
+    "codeTitle": "const developer =",
+    "codeComment": "",
+    "codeFunction": "// Desarrolladora full-stack • Soluciones con IA 🚀\nfunction buildAmazingThings(idea) {\n return idea + creatividad + codigo + IA ✨;\n}",
+    "viewProjects": "Ver Proyectos",
+    "contactMe": "Contáctame"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "subtitle": "Aprendiendo y construyendo cada día",
+    "description": "Siempre estoy abierta a discutir nuevos proyectos, ideas creativas u oportunidades para ser parte de tus visiones.",
+    "codeConst": "const aboutMe = {\n  role: 'Ingeniera de software',\n  focus: 'Desarrollo full-stack, herramientas de IA y workflows con n8n',\n  passion: 'Crear soluciones digitales modernas, intuitivas y eficaces',\n  stack: ['React', 'Node.js', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Python'],\n  interests: ['Desarrollo web', 'UI/UX', 'Soluciones con IA', 'Automatización']\n}",
+    "skills": {
+      "development": {
+        "title": "Actulmente estoy trabajando con el stack MERN",
+        "category": "Desarrollo"
+      },
+      "ai": {
+        "title": "Explorando nuevas herramientas de IA y su integración en aplicaciones web",
+        "category": "Integración con IA"
+      },
+      "projects": {
+        "title": "Me gusta crear landing pages, dashboards y aplicaciones web",
+        "category": "Proyectos"
+      },
+      "collaboration": {
+        "title": "Abierta a nuevas oportunidades como desarrolladora full-stack remota",
+        "category": "Disponibilidad"
+      },
+      "learning": {
+        "title": "Aprendiz constante, siempre perfeccionando mi trabajo.",
+        "category": "Aprendiendo"
+      },
+      "availability": {
+        "title": "Disponible para proyectos freelance y colaboraciones.",
+        "category": "Colaboraciones"
+      }
+    },
+    "cta": {
+      "title": "¡Construyamos juntos algo increíble! ✨",
+      "description": "Siempre me entusiasma trabajar en nuevos proyectos y colaborar con mentes creativas. Tanto si tienes un proyecto en mente como si solo quieres charlar sobre tecnología, ¡no dudes en ponerte en contacto conmigo!"
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Mostrando mi mejor trabajo",
+    "allProjects": "Todos los Proyectos",
+    "frontend": "Frontend",
+    "fullstack": "Full Stack",
+    "ai": "Proyectos IA",
+    "Backend": "Backend",
+    "UX/UI": "UX/UI",
+    "cta": {
+      "title": "¿Quieres ver más?",
+      "description": "Echa un vistazo a mi GitHub para ver más proyectos y contribuciones.",
+      "button": "Visita mi perfil de GitHub"
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Iniciemos una conversación",
+    "doYouHaveAProject": "¿Tienes algún proyecto en mente?",
+    "description": "Siempre estoy disponible para charlar sobre nuevas oportunidades, ideas creativas o simplemente charlar sobre tecnología.",
+    "letsTalk": "¡Hablemos!",
+    "card": {
+      "title": "La forma más rápida de ponerse en contacto conmigo",
+      "subtitle": "Normalmente respondo en un plazo de 24 a 48 horas.",
+      "info": "O copie el correo electrónico y utilícelo en su cliente favorito."
+    },
+    "availabilityCard": {
+      "quickResponse": {
+        "title": "Respuesta rápida",
+        "description": "Normalmente respondo dentro de 24-48 horas en días laborables."
+      },
+      "abailableFor": {
+        "title": "Disponible para",
+        "description": "Proyectos independientes, colaboraciones y oportunidades a tiempo completo."
+      }
+    },
+    "email": "Correo Electrónico",
+    "subject": "Asunto",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje"
+  },
+  "footer": {
+    "madeWith": "Hecho con",
+    "andLotOf": "y mucho",
+    "rights": "Gisela Scarpin. Todos los derechos reservados"
+  }
+}

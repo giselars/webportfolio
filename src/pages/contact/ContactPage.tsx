@@ -10,8 +10,10 @@ import {
 } from '@heroicons/react/24/outline';
 import { EnvelopeIcon as EnvelopeIconSolid } from '@heroicons/react/24/solid';
 import { MessageCircleReply } from 'lucide-react';
+import { useTranslatedContent } from '@/hooks/useTranslatedContent';
 
 export const ContactPage = () => {
+  const { t } = useTranslatedContent();
   const contactMethods = [
     {
       icon: '📨',
@@ -65,7 +67,9 @@ export const ContactPage = () => {
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-20">
-      <SectionTitle subtitle="Let's start a conversation">Contact</SectionTitle>
+      <SectionTitle subtitle={t('contact.subtitle')}>
+        {t('contact.title')}
+      </SectionTitle>
 
       {/* Hero Section */}
       <div className="text-center mb-16">
@@ -75,12 +79,11 @@ export const ContactPage = () => {
         </div>
 
         <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-          ¿Do you have a project in mind??
+          {t('contact.doYouHaveAProject')}
         </h3>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          I am always open to discussing new opportunities, creative ideas, or
-          simply chatting about technology.
-          <span className="text-accent-500 ml-1">¡Let's talk!</span>
+          {t('contact.description')}
+          <span className="text-accent-500 ml-1">{t('contact.letsTalk')}</span>
         </p>
       </div>
 
@@ -92,10 +95,10 @@ export const ContactPage = () => {
           </div>
 
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            The quickest way to contact me
+            {t('contact.card.title')}
           </h3>
           <p className="text-white mb-8 text-lg">
-            I typically respond within 24-48 hours.
+            {t('contact.card.subtitle')}
           </p>
 
           <a
@@ -106,9 +109,7 @@ export const ContactPage = () => {
             gisela.contactme@gmail.com
           </a>
 
-          <p className="text-sm text-white mt-6">
-            Or copy the email and use it in your favourite client. 📧
-          </p>
+          <p className="text-sm text-white mt-6">{t('contact.card.info')} 📧</p>
         </div>
       </Card>
 
@@ -175,9 +176,11 @@ export const ContactPage = () => {
           <div className="flex items-start gap-4">
             <MessageCircleReply className="w-8 h-8 text-yellow-500 flex-shrink-0" />
             <div>
-              <h4 className="font-bold text-gray-800 mb-2">Quick Response</h4>
+              <h4 className="font-bold text-gray-800 mb-2">
+                {t('contact.availabilityCard.quickResponse.title')}
+              </h4>
               <p className="text-sm text-gray-700">
-                I usually respond within the first 24-48 hours on working days.
+                {t('contact.availabilityCard.quickResponse.description')}
               </p>
             </div>
           </div>
@@ -187,9 +190,11 @@ export const ContactPage = () => {
           <div className="flex items-start gap-4">
             <HeartIconOutline className="w-8 h-8 text-accent-500 flex-shrink-0" />
             <div>
-              <h4 className="font-bold text-gray-800 mb-2">Available for</h4>
+              <h4 className="font-bold text-gray-800 mb-2">
+                {t('contact.availabilityCard.abailableFor.title')}
+              </h4>
               <p className="text-sm text-gray-700">
-                Freelance projects, collaborations, and full-time opportunities.
+                {t('contact.availabilityCard.abailableFor.description')}
               </p>
             </div>
           </div>
