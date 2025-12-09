@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { Skill } from '@/types/index';
 import { skillsConfig } from '@/data/skills';
 import { useTranslatedContent } from '@/hooks/useTranslatedContent';

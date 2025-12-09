@@ -18,10 +18,10 @@
     "title": "About Me",
     "subtitle": "Learning and building every day",
     "description": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.",
-    "codeConst": "const aboutMe = {\n  role: 'Software Engineer',\n  focus: 'Full-stack development, AI tools & n8n workflows',\n  passion: 'Building clean, user-friendly web applications',\n  stack: ['React', 'Node.js', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Python'],\n  interests: ['Web Development', 'UI/UX', 'AI-powered solutions', 'Automation']\n}",
+    "codeConst": "const aboutMe = {\n  role: 'Software Engineer',\n  focus: 'Full-stack development, AI tools & n8n workflows',\n  passion: 'Building clean, user-friendly web applications',\n  stack: ['React', 'Node.js', 'JavaScript', 'TypeScript', 'PHP', 'HTML', 'CSS', 'Python'],\n  interests: ['Web Development', 'UI/UX', 'AI-powered solutions', 'Automation']\n}",
     "skills": {
       "development": {
-        "title": " Working mainly with MERN stack.",
+        "title": "I design and develop tailor-made digital solutions",
         "category": "Development"
       },
       "ai": {
@@ -63,6 +63,36 @@
       "title": "Want to see more?",
       "description": "Check out my GitHub for more projects and contributions",
       "button": "Visit GitHub Profile"
+    },
+    "projectCard": {
+      "github": "GitHub →",
+      "liveDemo": "Live Demo →"
+    },
+    "featuredProjects": {
+      "1": {
+        "title": "E-Commerce Platform",
+        "description": "A modern e-commerce platform built with React and Node.js, featuring real-time inventory management."
+      },
+      "2": {
+        "title": "Weather App",
+        "description": "Real-time weather application with beautiful UI and location-based forecasts."
+      },
+      "3": {
+        "title": "AI Content Generator",
+        "description": "AI-powered tool to generate content using GPT-4 API with custom prompts."
+      },
+      "4": {
+        "title": "Dashboard Analytics",
+        "description": "Interactive dashboard with real-time data visualisation and analytics."
+      },
+      "5": {
+        "title": "Task Management App",
+        "description": "Collaborative task management with real-time updates and team features."
+      },
+      "6": {
+        "title": "Expense Tracker",
+        "description": "Personal finance tracker with data visualization and budget planning."
+      }
     }
   },
   "contact": {

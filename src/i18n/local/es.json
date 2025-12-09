@@ -18,10 +18,10 @@
     "title": "Sobre Mí",
     "subtitle": "Aprendiendo y construyendo cada día",
     "description": "Siempre estoy abierta a discutir nuevos proyectos, ideas creativas u oportunidades para ser parte de tus visiones.",
-    "codeConst": "const aboutMe = {\n  role: 'Ingeniera de software',\n  focus: 'Desarrollo full-stack, herramientas de IA y workflows con n8n',\n  passion: 'Crear soluciones digitales modernas, intuitivas y eficaces',\n  stack: ['React', 'Node.js', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Python'],\n  interests: ['Desarrollo web', 'UI/UX', 'Soluciones con IA', 'Automatización']\n}",
+    "codeConst": "const aboutMe = {\n  role: 'Ingeniera de software',\n  focus: 'Desarrollo full-stack, herramientas de IA y workflows con n8n',\n  passion: 'Crear soluciones digitales modernas, intuitivas y eficaces',\n  stack: ['React', 'Node.js', 'JavaScript', 'TypeScript', 'PHP', 'HTML', 'CSS', 'Python'],\n  interests: ['Desarrollo web', 'UI/UX', 'Soluciones con IA', 'Automatización']\n}",
     "skills": {
       "development": {
-        "title": "Actulmente estoy trabajando con el stack MERN",
+        "title": "Diseño y desarrollo soluciones digitales a medida",
         "category": "Desarrollo"
       },
       "ai": {
@@ -63,6 +63,36 @@
       "title": "¿Quieres ver más?",
       "description": "Echa un vistazo a mi GitHub para ver más proyectos y contribuciones.",
       "button": "Visita mi perfil de GitHub"
+    },
+    "projectCard": {
+      "github": "GitHub →",
+      "liveDemo": "Ver Demo →"
+    },
+    "featuredProjects": {
+      "1": {
+        "title": "Plataforma E-Commerce",
+        "description": "Una moderna plataforma de comercio electrónico creada con React y Node.js, que ofrece gestión de inventario en tiempo real."
+      },
+      "2": {
+        "title": "Aplicación meteorológica",
+        "description": "Aplicación meteorológica en tiempo real con una interfaz de usuario atractiva y previsiones basadas en la ubicación."
+      },
+      "3": {
+        "title": "Generador de contenido con IA",
+        "description": "Herramienta basada en IA para generar contenido utilizando la API GPT-4 con indicaciones personalizadas.."
+      },
+      "4": {
+        "title": "Panel Interactivo",
+        "description": "Panel interactivo con visualización y análisis de datos en tiempo real."
+      },
+      "5": {
+        "title": "Aplicación de gestión de tareas",
+        "description": "Gestión colaborativa de tareas con actualizaciones en tiempo real y funciones para equipos."
+      },
+      "6": {
+        "title": "Controlador de gastos",
+        "description": "Controlador de finanzas personales con visualización de datos y planificación presupuestaria."
+      }
     }
   },
   "contact": {
