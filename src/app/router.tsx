@@ -5,6 +5,7 @@ import { HomePage } from '@/pages/home/HomePage';
 import { ProjectsPage } from '@/pages/projects/ProjectsPage';
 import { AboutPage } from '@/pages/about/AboutPage';
 import { ContactPage } from '@/pages/contact/ContactPage';
+import { GitHubStatsPage } from '@/pages/github-stats/GitHubStatsPage';
 
 export const AppRouter = () => {
   return (
@@ -14,6 +15,7 @@ export const AppRouter = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/github-stats" element={<GitHubStatsPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </RootLayout>

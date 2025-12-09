@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
+    "github-stats": "GitHub Stats",
     "contact": "Contact"
   },
   "home": {
@@ -94,6 +95,10 @@
         "description": "Personal finance tracker with data visualization and budget planning."
       }
     }
+  },
+  "github-stats": {
+    "title": "GitHub Stats",
+    "subtitle": "My coding journey in numbers"
   },
   "contact": {
     "title": "Contact",

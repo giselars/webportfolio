@@ -13,6 +13,7 @@ export const useNavigation = () => {
     { to: '/', labelKey: 'nav.home', end: true },
     { to: '/about', labelKey: 'nav.about' },
     { to: '/projects', labelKey: 'nav.projects' },
+    { to: '/github-stats', labelKey: 'nav.github-stats' },
     { to: '/contact', labelKey: 'nav.contact' },
   ];
 

@@ -3,6 +3,7 @@
     "home": "Inicio",
     "about": "Sobre mí",
     "projects": "Proyectos",
+    "github-stats": "Estadísticas GitHub",
     "contact": "Contacto"
   },
   "home": {
@@ -94,6 +95,10 @@
         "description": "Controlador de finanzas personales con visualización de datos y planificación presupuestaria."
       }
     }
+  },
+  "github-stats": {
+    "title": "Estadísticas GitHub",
+    "subtitle": "Mi trayectoria en programación en cifras"
   },
   "contact": {
     "title": "Contacto",
