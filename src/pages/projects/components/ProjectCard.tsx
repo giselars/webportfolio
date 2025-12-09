@@ -1,4 +1,5 @@
 import { Card } from '@/components/ui/Card';
+import { useTranslatedContent } from '@/hooks/useTranslatedContent';
 
 import type { ProjectCardProps } from '@/types/index';
 
@@ -12,6 +13,7 @@ export const ProjectCard = ({
   github,
   demo,
 }: ProjectCardProps) => {
+  const { t } = useTranslatedContent();
   return (
     <Card hover className="overflow-hidden group cursor-pointer">
       <div className="aspect-video overflow-hidden bg-gradient-purple-blue">
@@ -55,7 +57,7 @@ export const ProjectCard = ({
               rel="noopener noreferrer"
               className="text-sm text-gray-600 hover:text-primary-600 transition-colors"
             >
-              GitHub →
+              {t('projects.projectCard.github')}
             </a>
           )}
           {demo && (
@@ -65,7 +67,7 @@ export const ProjectCard = ({
               rel="noopener noreferrer"
               className="text-sm text-primary-600 hover:text-primary-700 font-medium transition-colors"
             >
-              Live Demo →
+              {t('projects.projectCard.liveDemo')}
             </a>
           )}
         </div>
