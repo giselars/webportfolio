@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { CommandLineIcon } from '@heroicons/react/24/outline';
 import { ChevronRight } from 'lucide-react';
+import { LanguageSwitcher } from '../ui/LanguageSwitcher';
+import { useNavigation } from '@/hooks/useNavigation';
 
 interface NavLinkItem {
   to: string;
@@ -9,19 +11,12 @@ interface NavLinkItem {
   end?: boolean;
 }
 
-const navLinks: NavLinkItem[] = [
-  { to: '/', label: 'Home', end: true },
-  { to: '/about', label: 'About' },
-  { to: '/projects', label: 'Projects' },
-  { to: '/contact', label: 'Contact' },
-];
-
 const navLinkBaseClass = 'text-sm font-medium transition hover:text-pink-600';
 const navLinkActiveClass = 'text-pink-500';
 
 export const Header = () => {
+  const { navLinks } = useNavigation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -74,32 +69,36 @@ export const Header = () => {
               )}
             </NavLink>
           ))}
+          <LanguageSwitcher />
         </nav>
 
         {/* Mobile Hamburger Button */}
-        <button
-          onClick={toggleMenu}
-          className="md:hidden z-30 w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/50 transition-colors"
-          aria-label="Toggle menu"
-        >
-          <div className="w-6 h-5 flex flex-col justify-between">
-            <span
-              className={`block h-0.5 bg-gray-700 transition-all duration-300 ${
-                isMenuOpen ? 'rotate-45 translate-y-2' : ''
-              }`}
-            />
-            <span
-              className={`block h-0.5 bg-gray-700 transition-all duration-300 ${
-                isMenuOpen ? 'opacity-0' : ''
-              }`}
-            />
-            <span
-              className={`block h-0.5 bg-gray-700 transition-all duration-300 ${
-                isMenuOpen ? '-rotate-45 -translate-y-2' : ''
-              }`}
-            />
-          </div>
-        </button>
+        <div className="md:hidden flex items-center gap-3 z-30">
+          <LanguageSwitcher />
+          <button
+            onClick={toggleMenu}
+            className="md:hidden z-30 w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/50 transition-colors"
+            aria-label="Toggle menu"
+          >
+            <div className="w-6 h-5 flex flex-col justify-between">
+              <span
+                className={`block h-0.5 bg-gray-700 transition-all duration-300 ${
+                  isMenuOpen ? 'rotate-45 translate-y-2' : ''
+                }`}
+              />
+              <span
+                className={`block h-0.5 bg-gray-700 transition-all duration-300 ${
+                  isMenuOpen ? 'opacity-0' : ''
+                }`}
+              />
+              <span
+                className={`block h-0.5 bg-gray-700 transition-all duration-300 ${
+                  isMenuOpen ? '-rotate-45 -translate-y-2' : ''
+                }`}
+              />
+            </div>
+          </button>
+        </div>
 
         {/* Mobile menu - Responsive */}
         <div

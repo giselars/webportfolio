@@ -1,7 +1,9 @@
+import { useTranslatedContent } from '@/hooks/useTranslatedContent';
 import { HeartIcon } from '@heroicons/react/24/outline';
 import { Coffee, Linkedin, Github } from 'lucide-react';
 
 export const Footer = () => {
+  const { t } = useTranslatedContent();
   const year = new Date().getFullYear();
 
   return (
@@ -46,13 +48,17 @@ export const Footer = () => {
           </div>
 
           <div className="flex gap-1 items-center">
-            <span className="text-gray-600 text-sm">Made with </span>
+            <span className="text-gray-600 text-sm">
+              {t('footer.madeWith')}
+            </span>
             <HeartIcon className="w-4 h-4 text-accent-500 hover:text-white" />
-            <span className="text-gray-600 text-sm">by and lot of</span>
+            <span className="text-gray-600 text-sm">
+              {t('footer.andLotOf')}
+            </span>
             <Coffee size={16} className="text-gray-600" />
           </div>
           <p className="text-gray-500 text-xs">
-            © {new Date().getFullYear()} Gisela Scarpin. All rights reserved
+            © {new Date().getFullYear()} <span>{t('footer.rights')}</span>
           </p>
         </div>
       </div>
